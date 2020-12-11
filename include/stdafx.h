@@ -1,0 +1,10 @@
+#pragma once
+#include <iostream>
+#include <iomanip>
+#include <limits>
+#include <string>
+#include <vector>
+#include <cmath>
+#include "enums.h"
+#include "binomial.h"
+#include "inputvalidator.h"
