@@ -1,7 +1,4 @@
-#include <iostream>
-#include <iomanip>
-#include <limits>
-#include "binomial.h"
+#include "../include/stdafx.h"
 using namespace std;
 
 Bicalc::Bicalc(int x, int y, int n, double p){

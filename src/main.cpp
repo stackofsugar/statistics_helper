@@ -22,9 +22,5 @@ int main(){
             binom_b = input<int>();
             Bicalc binomial(binom_a, binom_b, binom_n, binom_p);
         }
-
-        cout << flush;
-        cin.sync();
-        cin.ignore(numeric_limits<streamsize>::max(), '\n');
     }
 }

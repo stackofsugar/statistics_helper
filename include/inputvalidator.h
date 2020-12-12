@@ -2,11 +2,6 @@
 #include "stdafx.h"
 using namespace std;
 
-void cleanbuf(){
-    cin.clear();
-    cin.ignore(numeric_limits<streamsize>::max(), '\n'); 
-}
-
 template<typename Ty>
 Ty input(Ty floor = 0, Ty ceil = numeric_limits<Ty>::max()){
     Ty buffer;
@@ -21,7 +16,8 @@ Ty input(Ty floor = 0, Ty ceil = numeric_limits<Ty>::max()){
             }
         } else {
             cout << "Invalid input! Please try again: ";
-            cleanbuf();
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n'); 
         }
     }
 }

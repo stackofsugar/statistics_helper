@@ -3,6 +3,7 @@ cmake_minimum_required(VERSION 3.16)
 set(SRC_Fs
     "main"
     "binomial"
+    "decls"
 )
 
 set(SRC_FILE "")
