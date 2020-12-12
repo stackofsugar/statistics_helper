@@ -1,12 +1,13 @@
-#include "include/stdafx.h"
+#include "../include/stdafx.h"
 using namespace std;
 
 int main(){
-    cout << "Welcome to the most complete statistics solver I've ever made! \n"
-         << "Please choose one of the available solvers:" << '\n';
+    cout << ">>> Welcome to Statistics Helper <<<\n"
+         << "Please choose your solver:" << '\n';
     
     while(1){
-        cout << "1. Cumulative Binomial Distribution \n";
+        cout << "1. Cumulative Binomial Distribution \n"
+             << "> ";
         int choice = input<int>(0,1);
 
         if(choice == eBinomial){
