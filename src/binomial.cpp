@@ -1,12 +1,12 @@
 #include "../include/stdafx.h"
 using namespace std;
 
-Bicalc::Bicalc(int x, int y, int n, double p){
-    this->x = x;
+Bicalc::Bicalc(int range_x, int range_y, int n, double p){
+    this->range_x = range_x;
     this->n = n;
     this->p = p;
     this->q = 1-p;
-    this->y = y;
+    this->range_y = range_y;
 }
 
 long double Bicalc::fact(int x){
@@ -42,26 +42,30 @@ long double Bicalc::pow(double p, int x){
     return res;
 }
 
+// DON'T CALL printres()
 void Bicalc::compute(){
-    long double resvec_buffer;
-    for (int i = 0; i <= x; i++){
+    long double resvec_buffer, sum = 0.0;
+    cout << "Cumulative Distribution: " << '\n';
+    for (int i = range_x; i <= range_y; i++){
         resvec_buffer = comb(n,i) * pow(p,i) * pow(q,(n-i));
         resvec.push_back(resvec_buffer);
+        sum += resvec_buffer;
+
+        cout << "P(X = " << i << ") = "
+             << fixed << setprecision(numeric_limits<long double>::digits10 + 1) 
+             << resvec_buffer << '\n';
     }
+    cout << "With the sum of: " << sum << '\n';
+    // printres();
 }
 
-void Bicalc::printres(){
-    cout << "Cumulative: " << endl;
-    long double sum = 0;
-    for (int i = 0; i <= x; i++){
-        cout << fixed << setprecision(numeric_limits<long double>::digits10 + 1) << "P(X = " << i << ") = " 
-             << resvec[i] << endl;
-        sum += resvec[i];
-    }
-    if (sum == 1){
-        cout << "The result succeded test." << endl;
-    }
-    else {
-        cout << "The result failed. Continue with caution." << endl;
-    }
-}
+// void Bicalc::printres(){
+//     cout << "Cumulative Distribution: " << '\n';
+//     long double sum = 0;
+//     for (int i = range_x; i <= range_y; i++){
+//         cout << fixed << setprecision(numeric_limits<long double>::digits10 + 1) << "P(X = " << i << ") = " 
+//              << resvec[i] << '\n';
+//         sum += resvec[i];
+//     }
+//     cout << "Sum of CD: " << sum << '\n';
+// }

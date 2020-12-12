@@ -19,8 +19,9 @@ int main(){
             binom_p = input<double>();
             cout << "Enter x sum range (a < x < b || a <space> b): ";
             binom_a = input<int>();
-            binom_b = input<int>();
+            binom_b = input<int>(binom_a + 1);
             Bicalc binomial(binom_a, binom_b, binom_n, binom_p);
+            binomial.compute();
         }
     }
 }

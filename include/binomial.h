@@ -2,7 +2,7 @@
 #include <vector>
 class Bicalc {
     private:
-        int n,x,y;
+        int n, range_x, range_y;
         double p,q;
         std::vector<long double> resvec;
     public:
@@ -11,5 +11,5 @@ class Bicalc {
         long double comb(int, int);
         long double pow(double, int);
         void compute();
-        void printres();
+        // void printres();
 };
